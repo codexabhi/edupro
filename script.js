@@ -163,4 +163,44 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+  // Category filter functionality
+  const categoryFilters = document.querySelectorAll('.category-filter');
+  const courseCards = document.querySelectorAll('.course-card');
+
+  categoryFilters.forEach(function(filter) {
+    filter.addEventListener('click', function() {
+      // Remove active class from all filters
+      categoryFilters.forEach(function(f) {
+        f.classList.remove('active');
+        f.classList.remove('text-white');
+        f.classList.add('text-slate-600');
+      });
+
+      // Add active class to clicked filter
+      this.classList.add('active');
+      this.classList.remove('text-slate-600');
+
+      const filterValue = this.getAttribute('data-filter');
+
+      // Filter course cards
+      courseCards.forEach(function(card) {
+        const cardCategory = card.getAttribute('data-category');
+
+        if (filterValue === 'all' || cardCategory === filterValue) {
+          card.style.display = 'block';
+          setTimeout(function() {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(function() {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
 });
