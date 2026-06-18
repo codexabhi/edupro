@@ -203,4 +203,18 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // Load AI chatbot widget (site-wide)
+  if (!document.querySelector('link[href="chatbot.css"]')) {
+    var chatbotCss = document.createElement('link');
+    chatbotCss.rel = 'stylesheet';
+    chatbotCss.href = 'chatbot.css';
+    document.head.appendChild(chatbotCss);
+  }
+
+  if (!document.querySelector('script[src="chatbot.js"]')) {
+    var chatbotJs = document.createElement('script');
+    chatbotJs.src = 'chatbot.js';
+    document.body.appendChild(chatbotJs);
+  }
 });
