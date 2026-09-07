@@ -4,16 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Navbar scroll effect
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', function() {
     const currentScroll = window.pageYOffset;
-    if (currentScroll > 50) {
+    if (navbar && currentScroll > 50) {
       navbar.classList.add('nav-scrolled');
-    } else {
+    } else if (navbar) {
       navbar.classList.remove('nav-scrolled');
     }
-    lastScroll = currentScroll;
   });
 
   // Mobile menu
@@ -25,19 +23,30 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', function() {
       mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     });
 
-    closeMobileMenu.addEventListener('click', function() {
+    const closeMenu = function() {
       mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-    });
+    };
+
+    if (closeMobileMenu) {
+      closeMobileMenu.addEventListener('click', closeMenu);
+    }
 
     mobileLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
   }
 
@@ -205,16 +214,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Load AI chatbot widget (site-wide)
-  if (!document.querySelector('link[href="chatbot.css"]')) {
+  if (!document.querySelector('link[href="assets/css/chatbot.css"]')) {
     var chatbotCss = document.createElement('link');
     chatbotCss.rel = 'stylesheet';
-    chatbotCss.href = 'chatbot.css';
+    chatbotCss.href = 'assets/css/chatbot.css';
     document.head.appendChild(chatbotCss);
   }
 
-  if (!document.querySelector('script[src="chatbot.js"]')) {
+  if (!document.querySelector('script[src="assets/js/chatbot.js"]')) {
     var chatbotJs = document.createElement('script');
-    chatbotJs.src = 'chatbot.js';
+    chatbotJs.src = 'assets/js/chatbot.js';
     document.body.appendChild(chatbotJs);
   }
 });

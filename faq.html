@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       lucide.createIcons();
@@ -55,9 +55,9 @@
   <!-- Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center gap-2">
-          <img src="logo.png" alt="EduPro Logo" class="h-12 w-auto">
+          <img src="assets/image/logo.png" alt="EduPro Logo" class="h-14 w-auto">
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Home</a>
@@ -69,36 +69,42 @@
             <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 overflow-hidden">
               <a href="courses.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition">
                 <div class="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center"><i data-lucide="globe" class="w-4 h-4 text-primary-600"></i></div>
-                <div><p class="font-medium text-slate-900">Web Development</p><p class="text-xs text-slate-500">Full-stack mastery</p></div>
+                <div><p class="text-sm font-medium text-slate-800">All Courses</p><p class="text-xs text-slate-500">Browse our full catalog</p></div>
+              </a>
+              <a href="web-development.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition">
+                <div class="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center"><i data-lucide="code-2" class="w-4 h-4 text-primary-600"></i></div>
+                <div><p class="text-sm font-medium text-slate-800">Web Development</p><p class="text-xs text-slate-500">Frontend & backend</p></div>
               </a>
               <a href="data-science.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition">
-                <div class="w-8 h-8 rounded-lg bg-accent-50 flex items-center justify-center"><i data-lucide="bar-chart-2" class="w-4 h-4 text-accent-600"></i></div>
-                <div><p class="font-medium text-slate-900">Data Science</p><p class="text-xs text-slate-500">Analytics & ML</p></div>
+                <div class="w-8 h-8 rounded-lg bg-accent-50 flex items-center justify-center"><i data-lucide="brain" class="w-4 h-4 text-accent-600"></i></div>
+                <div><p class="text-sm font-medium text-slate-800">Data Science</p><p class="text-xs text-slate-500">ML & analytics</p></div>
               </a>
               <a href="design.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition">
-                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center"><i data-lucide="palette" class="w-4 h-4 text-emerald-600"></i></div>
-                <div><p class="font-medium text-slate-900">Design</p><p class="text-xs text-slate-500">UI/UX & Graphics</p></div>
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center"><i data-lucide="pen-tool" class="w-4 h-4 text-emerald-600"></i></div>
+                <div><p class="text-sm font-medium text-slate-800">Design</p><p class="text-xs text-slate-500">UI/UX & graphics</p></div>
+              </a>
+              <a href="placement.html" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition">
+                <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center"><i data-lucide="briefcase" class="w-4 h-4 text-amber-600"></i></div>
+                <div><p class="text-sm font-medium text-slate-800">Placement Training</p><p class="text-xs text-slate-500">Career-ready programs</p></div>
               </a>
             </div>
           </div>
           <a href="placement.html" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Placements</a>
-          <a href="faq.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 transition">FAQ</a>
+          <a href="faq.html" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">FAQ</a>
           <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Contact</a>
         </div>
-        <div class="hidden md:flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-4">
           <a href="#" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Sign In</a>
-          <a href="#" class="text-sm font-medium px-5 py-2.5 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:shadow-lg hover:shadow-primary-500/30 transition-all">Get Started</a>
+          <a href="#" class="btn-shine px-5 py-2.5 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white text-sm font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition">Get Started</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition">
-          <i data-lucide="menu" class="w-6 h-6 text-slate-600"></i>
-        </button>
+        <button id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition"><i data-lucide="menu" class="w-6 h-6 text-slate-700"></i></button>
       </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 p-6 flex flex-col">
-    <button id="close-menu-btn" class="self-end p-2 rounded-lg hover:bg-slate-100 transition mb-8">
+  <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 p-6 flex flex-col" aria-hidden="true">
+    <button id="closeMobileMenu" type="button" aria-label="Close navigation menu" class="self-end p-2 rounded-lg hover:bg-slate-100 transition mb-8">
       <i data-lucide="x" class="w-6 h-6 text-slate-600"></i>
     </button>
     <div class="flex flex-col gap-2">
@@ -236,7 +242,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center gap-2 mb-6">
-            <img src="logo.png" alt="EduPro Logo" class="h-12 w-auto">
+            <img src="assets/image/footer-logo.jpg" alt="EduPro Logo" class="h-14 rounded w-auto">
           </a>
           <p class="text-slate-400 mb-6 max-w-sm">Empowering learners worldwide with expert-led courses, hands-on projects, and a supportive community.</p>
           <div class="flex gap-3">
@@ -301,6 +307,6 @@
     });
   </script>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
